@@ -4,57 +4,58 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Sir Piorque</title>
 <style>
-body{background:black;text-align:center;color:white;margin:0;overflow:hidden;font-family:Arial;padding:0}
-h1{margin-top:25px;font-weight:100;font-size:26px;animation:wave 2s infinite,colorChange 2s infinite alternate}
-@keyframes wave{0%,100%{transform:rotate(-1.5deg)}50%{transform:rotate(1.5deg)}}
+body{
+margin:0;overflow:hidden;font-family:Arial;text-align:center;color:white;
+background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800');
+background-size:cover;background-position:center;
+}
+h1{margin-top:15px;font-size:28px;animation:wave 2s infinite,colorChange 2s infinite alternate}
+@keyframes wave{0%,100%{transform:rotate(-1deg)}50%{transform:rotate(1deg)}}
 @keyframes colorChange{0%{color:#00ccff;text-shadow:0 0 15px #00ccff}100%{color:#00ff99;text-shadow:0 0 15px #00ff99}}
-.petal{position:fixed;top:-20px;font-size:22px;animation:fall linear forwards}
-@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
-.side-flowers{position:fixed;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:15px}
-.left{left:10px}.right{right:10px}
-.tulip{font-size:32px}
-.message{max-width:380px;margin:15px auto;font-weight:100;font-size:13px;line-height:20px;color:#ddd;background:rgba(255,255,255,0.05);padding:12px;border-radius:10px}
+@keyframes fall{to{transform:translateY(105vh) rotate(360deg)}}
+.petal{position:fixed;top:-20px;font-size:30px;animation:fall linear forwards;z-index:99}
+.side-flowers{position:fixed;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:15px;z-index:1}
+.left{left:8px}.right{right:8px}.tulip{font-size:28px}
+.message{
+max-width:340px;margin:10px auto;
+font-size:15px;line-height:23px;color:white;
+background:rgba(0,0,0,0.75);padding:18px;border-radius:12px;
+border:1px solid rgba(255,255,255,0.3);
+text-shadow:0 1px 3px black;
+}
+.from{margin-top:15px;font-size:16px;font-weight:bold;color:#00ff99;text-shadow:0 0 8px #00ff99}
 </style>
 </head>
 <body>
-
-<div class="side-flowers left">
-<div class="tulip">🌷</div>
-<div class="tulip" style="filter:hue-rotate(90deg)">🌷</div>
-<div class="tulip" style="filter:hue-rotate(180deg)">🌷</div>
-<div class="tulip" style="filter:hue-rotate(270deg)">🌷</div>
-</div>
-
-<div class="side-flowers right">
-<div class="tulip" style="filter:hue-rotate(45deg)">🌷</div>
-<div class="tulip" style="filter:hue-rotate(135deg)">🌷</div>
-<div class="tulip" style="filter:hue-rotate(225deg)">🌷</div>
-<div class="tulip" style="filter:hue-rotate(300deg)">🌷</div>
-</div>
+<div class="side-flowers left"><div class="tulip">🌷</div><div class="tulip" style="filter:hue-rotate(90deg)">🌷</div><div class="tulip" style="filter:hue-rotate(180deg)">🌷</div><div class="tulip" style="filter:hue-rotate(270deg)">🌷</div></div>
+<div class="side-flowers right"><div class="tulip" style="filter:hue-rotate(45deg)">🌷</div><div class="tulip" style="filter:hue-rotate(135deg)">🌷</div><div class="tulip" style="filter:hue-rotate(225deg)">🌷</div><div class="tulip" style="filter:hue-rotate(300deg)">🌷</div></div>
 
 <h1>Happy Teachers Day Sir!</h1>
-<h1 style="font-size:19px;">Sir JOHN EZEKIEL ARCABAL PIORQUE</h1>
+<h1 style="font-size:20px;">Sir JOHN EZEKIEL ARCABAL PIORQUE</h1>
 
 <div class="message">
-Sir, thank you po talaga sa lahat. Sa pagtuturo po at sa pag-intindi samin kahit minsan po makulit kami.<br><br>
-Naappreciate po namin yung effort nyo araw araw sir, kahit po pagod na kayo tinuturuan nyo pa din kami ng maayos. Kayo po yung teacher na di namin makakalimutan.<br><br>
-Pasensya na po sir medyo simple lang po tong nagawa ko, first time ko lang po gumawa ng ganito. Pero pinaghirapan ko po talaga to para sa inyo.<br><br>
-Happy Teachers Day po ulit sir! Ingat po kayo palagi sir!
+Sir, thank you so much for everything. Thank you for teaching us and for understanding us even though sometimes we are makulit.<br><br>
+We really appreciate your effort everyday sir, even when you are tired you still teach us properly. You are one of the teacher that we will never forget.<br><br>
+Sorry sir this is just simple, this is my first time making like this. But I really worked hard for this for you sir.<br><br>
+Happy Teachers Day again sir! Take care always sir!
 </div>
 
-<p style="font-size:11px;opacity:0.5;">- From your student</p>
+<div class="from">From your student 👩‍🎓</div>
 
 <script>
+let colors=[0,90,180,270];
 function createPetal(){
 var p=document.createElement("div");
 p.className="petal";
-p.innerHTML="🌸";
-p.style.left=Math.random()*100+"%";
-p.style.animationDuration=(Math.random()*1+2)+"s";
+p.innerHTML="🌷";
+p.style.left=Math.random()*95+"%";
+p.style.filter="hue-rotate("+colors[Math.floor(Math.random()*4)]+"deg)";
+p.style.animationDuration=(Math.random()*2+2)+"s";
 document.body.appendChild(p);
-setTimeout(()=>{p.remove()},3000);
+setTimeout(()=>{p.remove()},4000);
 }
 setInterval(createPetal,100);
+for(let i=0;i<30;i++){setTimeout(createPetal,i*80)}
 </script>
 </body>
 </html>
