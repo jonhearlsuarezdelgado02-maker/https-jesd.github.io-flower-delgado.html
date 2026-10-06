@@ -1,26 +1,26 @@
-<!DOCTYPE html>
 <html>
 <head>
+<title>Teachers Day</title>
+</head>
 <style>
-body {
-  background: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+body{
+background:black;
+text-align:center;
+color:white;
 }
-.flower {
-  font-size: 100px;
-  animation: bloom 2s infinite;
-}
-@keyframes bloom {
-  0% { transform: scale(0.5) rotate(0deg); }
-  50% { transform: scale(1.2) rotate(10deg); }
-  100% { transform: scale(1) rotate(0deg); }
+h1{
+color:yellow;
 }
 </style>
-</head>
 <body>
-  <div class="flower">🌸</div>
+
+<h1>Happy Teachers Day Sir!</h1>
+<h1>Sir JOHN EZEKIEL ARCABAL PIORQUE</h1>
+<br><br>
+<div style="font-size:80px;">🌻</div>
+<br><br>
+<p>Thank you po Sir!</p>
+<p>From your student</p>
+
 </body>
 </html>
